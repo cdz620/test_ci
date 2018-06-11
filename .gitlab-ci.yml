@@ -1,4 +1,4 @@
-image: alpine
+image: hub.dianchu.cc/library/gotool:latest
 
 stages:
   - compile
