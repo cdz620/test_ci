@@ -12,10 +12,14 @@ compile:
     paths:
     - compiled.txt
     expire_in: 20 minutes
+  tags:
+    - rancher_docker
 
 test:
   stage: test
   script: cat compiled.txt | grep -q 'Hello world'
+  tags:
+    - rancher_docker
 
 pack-gz:
   stage: package
@@ -23,6 +27,8 @@ pack-gz:
   artifacts:
     paths:
     - packaged.gz
+  tags:
+    - rancher_docker
 
 pack-iso:
   stage: package
@@ -35,3 +41,5 @@ pack-iso:
   artifacts:
     paths:
     - packaged.iso
+  tags:
+    - rancher_docker
